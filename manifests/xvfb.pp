@@ -14,8 +14,7 @@ class xvfb inherits xvfb::params {
   ->
   file { [
     "${xvfb::params::error_log_file}",
-    "${xvfb::params::default_log_file}",
-    "${xvfb::params::process_id_file}"
+    "${xvfb::params::default_log_file}"
     ]:
     ensure  => 'present',
     mode    => '0775',

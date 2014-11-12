@@ -5,7 +5,7 @@
 class xvfb inherits xvfb::params {
   
   # Create log files and folders.
-  file { "/var/log/xvfb":
+  file { "${xvfb::params::log_dir}":
       owner => 'root',
       group => 'root',
       mode => "0775",
@@ -13,9 +13,9 @@ class xvfb inherits xvfb::params {
   }
   ->
   file { [
-    '/var/log/xvfb/xvfb_error.log',
-    '/var/log/xvfb/xvfb.pid',
-    '/var/log/xvfb/xvfb_std.log'
+    "${xvfb::params::error_log_file}",
+    "${xvfb::params::default_log_file}",
+    "${xvfb::params::process_id_file}"
     ]:
     ensure  => 'present',
     mode    => '0775',

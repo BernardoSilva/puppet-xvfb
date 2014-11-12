@@ -15,7 +15,7 @@
 #
 # === Examples
 #
-#  class {'display':
+#  class {'xvfb':
 #    display => 99,
 #    width   => 1024,
 #    height  => 768,

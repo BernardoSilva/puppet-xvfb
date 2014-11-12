@@ -4,8 +4,12 @@
 #
 #
 class xvfb::params {
-  $osfamily_name       = downcase($::osfamily)
-  $xvfb_erb            = "xvfb/${osfamily_name }/xvfb.erb"
+  $osfamily_name    = downcase($::osfamily)
+  $xvfb_erb         = "xvfb/${osfamily_name }/xvfb.erb"
+  $log_dir          = '/var/log/xvfb'
+  $error_log_file   = "${log_dir}/xvfb_error.log"
+  $default_log_file = "${log_dir}/xvfb_std.log"
+  $process_id_file  = "${log_dir}/xvfb.pid"
 
   case $::osfamily {
     'RedHat': {
@@ -18,5 +22,5 @@ class xvfb::params {
       fail("Module ${module_name} is not supported on ${::operatingsystem}")
     }
   }
-  
+
 }

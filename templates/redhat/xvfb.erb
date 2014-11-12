@@ -9,10 +9,10 @@
 # Source function library.
 . /etc/rc.d/init.d/functions
 
-log_dir=/var/log/Xvfb
-error_log=$log_dir/Xvfb_error.log
-std_log=$log_dir/Xvfb_std.log
-pid_file=$log_dir/Xvfb.pid
+log_dir=/var/log/xvfb
+error_log=$log_dir/xvfb_error.log
+std_log=$log_dir/xvfb_std.log
+pid_file=$log_dir/xvfb.pid
 java=$( which java )
 xvfb=$( which Xvfb )
 # Get current user.

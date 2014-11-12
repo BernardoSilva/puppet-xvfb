@@ -1,0 +1,8 @@
+name         'xfvb'
+version      '0.0.1'
+source       'git@github.com:BernardoSilva/puppet-xvfb.git'
+author       'Bernardo Silva'
+license      'GNU GENERAL PUBLIC LICENSE, Version 2.0'
+summary      'Puppet module which sets up Xvfb'
+description  'Puppet module which sets up Xvfb'
+project_page 'https://github.com/BernardoSilva/puppet-xvfb'

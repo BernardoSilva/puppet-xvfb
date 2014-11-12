@@ -4,29 +4,31 @@
 #
 # === Parameters
 #
-# [*display*]
-#    X display to use. Default is 0.
+# [*screen_number*]
+#    X screen to use. Default is 0.
 # [*width*]
 #    Screen width to use. Default is 1280.
 # [*height*]
 #    Screen height to use. Default is 800.
-# [*color*]
-#    Screen color depth to use. Default is "24+32" (32 bit).
+# [*depth*]
+#    Screen color depth to use. Default is "32".
 #
 # === Examples
 #
 #  class {'xvfb':
-#    display => 99,
+#    screen_number => 0,
 #    width   => 1024,
 #    height  => 768,
-#    color   => 24,
+#    depth   => 24,
+#    server_id => 99,
 #  }
 #
 class xvfb(
-  $display = 0,
+  $screen_number = 0,
   $width   = 1280,
   $height  = 768,
-  $color   = '24+32'
+  $depth   = 32,
+  $server_id = 99,
 ) inherits xvfb::params {
   include env
   include xvfb

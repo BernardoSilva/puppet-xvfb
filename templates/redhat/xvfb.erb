@@ -9,10 +9,26 @@
 # Source function library.
 . /etc/rc.d/init.d/functions
 
-log_dir=/var/log/xvfb
-error_log=$log_dir/xvfb_error.log
-std_log=$log_dir/xvfb_std.log
-pid_file=$log_dir/xvfb.pid
+
+# The server will listen for connections as server number SERVER_ID.
+SERVER_ID=:<%= scope.lookupvar('xvfb::server_id') %>
+# With value used for screen dimensions.
+WIDTH=<%=    scope.lookupvar('xvfb::width')   %>
+# Height value used for screen dimensions.
+HEIGHT=<%=   scope.lookupvar('xvfb::height')  %>
+# Depth value used for screen.
+DEPTH=<%=    scope.lookupvar('xvfb::depth')   %>
+# By default, only screen 0 exists and has the dimensions 1280x1024x8.
+# This will create screen screen_number and sets its width, height, and depth.
+SCREEN_NUMBER=<%= scope.lookupvar('xvfb::screen_number') %>
+
+
+
+
+log_dir=<%=    scope.lookupvar('xvfb::params::log_dir')   %>
+error_log=<%=    scope.lookupvar('xvfb::params::error_log_file')   %>
+std_log=<%=    scope.lookupvar('xvfb::params::default_log_file')   %>
+pid_file=<%=    scope.lookupvar('xvfb::params::process_id_file')   %>
 java=$( which java )
 xvfb=$( which Xvfb )
 # Get current user.
@@ -32,7 +48,7 @@ start() {
     fi
 
     echo -n "Starting Xvfb..."
-    su $user -c "$xvfb :99 -ac -screen 0 1280x1024x24 -nolisten tcp >$std_log 2>$error_log &"
+    su $user -c "$xvfb $SERVER_ID -ac -screen $SCREEN_NUMBER $WIDTHx$HEIGHTx$DEPTH -nolisten tcp >$std_log 2>$error_log &"
 
     if [ $? == "0" ]; then
         success

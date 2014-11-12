@@ -1,0 +1,14 @@
+{
+  "name": "BernardoSilva-xvfb",
+  "version": "0.1.0",
+  "author": "BernardoSilva",
+  "summary": "A puppet module to setup Xvfb.",
+  "license": "GNU GENERAL PUBLIC LICENSE 2.0",
+  "source": "https://github.com/BernardoSilva/puppet-xvfb.git",
+  "project_page": "https://github.com/BernardoSilva/puppet-xvfb",
+  "issues_url": "https://github.com/BernardoSilva/puppet-xvfb/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+

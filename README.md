@@ -1,9 +1,33 @@
-puppet-xvfb
-===========
+# Puppet - Xvfb
 
-A puppet module to setup Xvfb
+#### Table of Contents
 
-###Usage
+1. [Overview](#overview)
+2. [Module Description - What the module does and why it is useful](#module-description)
+3. [Setup - The basics of getting started with xvfb](#setup)
+    * [What xvfb affects](#what-xvfb-affects)
+    * [Setup requirements](#setup-requirements)
+    * [Beginning with xvfb](#beginning-with-xvfb)
+4. [Usage - Configuration options and additional functionality](#usage)
+5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+5. [Limitations - OS compatibility, etc.](#limitations)
+6. [Development - Guide for contributing to the module](#development)
+
+## Overview
+
+This module is very usefull if you want to install Xvfb to be able to run headless browsers.
+You can run your e2e tests with Protractor or other toll without worry if you touch keyboard or mouse affects the tests.
+Working on puppet 3.7.3
+
+## Module Description
+
+This module purpose is to facilitate the instalation of Xvfb virtual frame buffer X.
+
+
+## Setup
+
+
+### Beginning with xvfb
 
 If you include the xvfb class xvfb will be installed along with a init script:
 
@@ -18,9 +42,9 @@ class {'xvfb':}
 ```
 
 
-### Configuration
+## Usage
 
-# By default, only screen 0 exists and has the dimensions 1280x1024x8.
+By default, only screen 0 exists and has the dimensions 1280x1024x8.
 
 This will make server listen for connections as server number 99 and 
 
@@ -37,3 +61,21 @@ class {'xvfb':
   depth   => 24,   # default is "24" 
 }
 ```
+
+
+## Reference
+
+This will install the Xvfb virtual frame buffer X server on your system.
+Read more: http://www.x.org/archive/current/doc/man/man1/Xvfb.1.xhtml
+
+## Limitations
+
+0.1.0 - Only tested on RedHat
+
+## Development
+
+Just try to follow the standards and improve. :)
+
+## Contributors
+You? 
+

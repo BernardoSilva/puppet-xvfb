@@ -58,13 +58,32 @@ class {'xvfb':
   screen_number => 1,   # default is 0
   width   => 1024, # default is 1280
   height  => 768,  # default is 800
-  depth   => 24,   # default is "24" 
+  depth   => 8,   # default is "8" 
 }
+```
+
+Check if Xvfb is running
+
+```shell
+$ sudo /etc/inid.d/xvfb status
+```
+
+Start Xvfb
+
+```shell
+$ sudo /etc/inid.d/xvfb start
+```
+
+Stop Xvfb
+
+```shell
+$ sudo /etc/inid.d/xvfb stop
 ```
 
 
 ## Reference
 
+Will create an init.d script in `/etc/init.d/xvfb`
 This will install the Xvfb virtual frame buffer X server on your system.
 Read more: http://www.x.org/archive/current/doc/man/man1/Xvfb.1.xhtml
 

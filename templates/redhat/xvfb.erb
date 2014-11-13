@@ -22,9 +22,6 @@ DEPTH=<%=    scope.lookupvar('xvfb::depth')   %>
 # This will create screen screen_number and sets its width, height, and depth.
 SCREEN_NUMBER=<%= scope.lookupvar('xvfb::screen_number') %>
 
-
-
-
 log_dir=<%=    scope.lookupvar('xvfb::params::log_dir')   %>
 error_log=<%=    scope.lookupvar('xvfb::params::error_log_file')   %>
 std_log=<%=    scope.lookupvar('xvfb::params::default_log_file')   %>
@@ -34,6 +31,8 @@ xvfb=$( which Xvfb )
 # Get current user.
 user=$USER
 
+# Execution params for Xvfb.
+ARGS="$SERVER_ID -ac -screen $SCREEN_NUMBER ${WIDTH}x${HEIGHT}x${DEPTH} -nolisten tcp >$std_log 2> $error_log &"
 
 
 start() {
@@ -55,7 +54,7 @@ start() {
     fi
 
     echo -n "Starting Xvfb..."
-    su $user -c "$xvfb $SERVER_ID -ac -screen $SCREEN_NUMBER $WIDTHx$HEIGHTx$DEPTH -nolisten tcp >$std_log 2>$error_log &"
+    su $user -c "$xvfb $ARGS"
         
     if [[ $? != 0 ]]; then
         success 

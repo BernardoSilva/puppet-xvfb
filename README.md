@@ -1,5 +1,8 @@
 # Puppet - Xvfb
 
+
+[![Build Status](https://travis-ci.org/BernardoSilva/puppet-xvfb.svg?branch=master)](https://travis-ci.org/BernardoSilva/puppet-xvfb)
+
 #### Table of Contents
 
 1. [Overview](#overview)

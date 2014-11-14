@@ -1,6 +1,6 @@
 {
   "name": "BernardoSilva-xvfb",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "BernardoSilva",
   "summary": "A puppet module to setup Xvfb.",
   "license": "GNU GENERAL PUBLIC LICENSE 2.0",

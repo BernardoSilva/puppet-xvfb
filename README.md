@@ -96,5 +96,6 @@ Read more: http://www.x.org/archive/current/doc/man/man1/Xvfb.1.xhtml
 Just try to follow the standards and improve. :)
 
 ## Contributors
-You? 
+
+https://github.com/BernardoSilva/puppet-xvfb/graphs/contributors
 
